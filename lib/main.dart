@@ -60,25 +60,85 @@ class _MyHomePageState extends State<MyHomePage> {
         body: Center(
       child: carregado
           ? Container(
+              height: 500,
+              width: MediaQuery.of(context).size.width - 100,
               child: Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: <Widget>[
-                    Text(
-                      "Total de Casos: " + totalCasos.toString(),
-                      style: TextStyle(fontSize: 40),
+                  child: PageView(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Colors.red,
+                        borderRadius: BorderRadius.circular(20)
+                      ),
+                      child: Center(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Text(
+                              "Total de Casos: ",
+                              style: TextStyle(fontSize: 30),
+                            ),
+                            Text(
+                              (totalCasos.toInt()).toString(),
+                              style: TextStyle(fontSize: 30),
+                            ),
+                          ],
+                        ),
+                      ),
                     ),
-                    Text(
-                      "Total de Mortes: " + totalMortes.toString(),
-                      style: TextStyle(fontSize: 40),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Colors.yellow,
+                        borderRadius: BorderRadius.circular(20)
+                      ),
+                      child: Center(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Text(
+                              "Total de Mortes: ",
+                              style: TextStyle(fontSize: 30),
+                            ),
+                            Text(
+                              (totalMortes.toInt()).toString(),
+                              style: TextStyle(fontSize: 30),
+                            ),
+                          ],
+                        ),
+                      ),
                     ),
-                    Text(
-                      "Total de Curados: " + totalCurados.toString(),
-                      style: TextStyle(fontSize: 40),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Colors.green,
+                        borderRadius: BorderRadius.circular(20)
+                      ),
+                      child: Center(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Text(
+                              "Total de Curados: ",
+                              style: TextStyle(fontSize: 30),
+                            ),
+                            Text(
+                              (totalCurados.toInt()).toString(),
+                              style: TextStyle(fontSize: 30),
+                            ),
+                          ],
+                        ),
+                      ),
                     ),
-                  ],
-                ),
-              ),
+                  ),
+                ],
+              )),
             )
           : Container(
               child: Text(
